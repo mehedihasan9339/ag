@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { SheetDescriptor, SpreadsheetMainMenuItem } from '@progress/kendo-angular-spreadsheet';
+import { sheets } from './sheets';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'my-app',
+    templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'kendo-angular-ui';
+    public sheets: SheetDescriptor[] = sheets;
+    public items: SpreadsheetMainMenuItem[] = [
+        { id: 'file', active: true },
+        { id: 'home' },
+        { id: 'insert' }
+    ];
 }
