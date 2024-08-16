@@ -7,16 +7,18 @@ import { sheets } from './sheets';
     templateUrl: './app.component.html',
 })
 export class AppComponent {
-    public sheets: SheetDescriptor[] = sheets;
+    public sheets: SheetDescriptor[] = [];
     public items: SpreadsheetMainMenuItem[] = [
         { id: 'file', active: true },
         { id: 'home' },
         { id: 'insert' }
     ];
 
-    constructor(private zone: NgZone){}
+    constructor(private zone: NgZone){
+      this.sheets = sheets;
+    }
 
-    public AddRow(): void {
+    public addRowClick(): void {
       let rows = this.sheets[0].rows ?? [];
         
       let index = rows?.findIndex(r => r.index != null) ?? 1;
