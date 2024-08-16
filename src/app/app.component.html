@@ -1,7 +1,13 @@
-<kendo-spreadsheet
-  [sheets]="sheets"
-  activeSheet="Food Order"
-  [menuItems]="items"
-  style="height: 600px; width: 100%"
->
-</kendo-spreadsheet>
+<div class="main-container">
+  <kendo-spreadsheet
+    [sheets]="sheets"
+    activeSheet="Food Order"
+    [menuItems]="items"
+    style="height: 600px; width: 80%; margin: auto;">
+  </kendo-spreadsheet>
+  <div style="width: 80%; margin: auto;">
+    <button 
+      class="btn btn-primary"
+      (click)="AddRow()">Add Row</button>
+  </div>
+</div>
